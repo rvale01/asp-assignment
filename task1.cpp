@@ -22,11 +22,11 @@ int main(){
     sp = (char*)((uintptr_t)(sp) & -16L);
     sp = sp - 128;
 
-    struct Context c;
+    Context c;
     c.rip = (void *)foo;
     c.rsp = sp;
 
-    struct Context gooc;
+    Context gooc;
     gooc.rip = (void *)goo;
     gooc.rsp = sp;
     
