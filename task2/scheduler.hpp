@@ -9,7 +9,7 @@ class Scheduler {
         Fiber * current_;
 
     public:
-    Scheduler(int* data_param = nullptr){
+    Scheduler(){
     }
 
     ~Scheduler(){
@@ -30,11 +30,11 @@ class Scheduler {
             fibers_.pop_front();
 
             //set c calling method function get_context from current_
-            Context * c = current_->get_context_();
+            Context * c = current_->get_context();
             //call set_context with c
 
             // std::cout << "hello 3 - " << c << "\n";
-            set_context(current_->get_context_());
+            set_context(current_->get_context());
         }
     }
 
@@ -44,5 +44,11 @@ class Scheduler {
 
     Fiber * get_current(){
         return current_;
+    }
+
+    void yield () {
+        fibers_.push_back(current_);
+
+        set_context(fibers_.front()->get_context());
     }
 };
