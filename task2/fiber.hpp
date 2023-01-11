@@ -11,11 +11,11 @@ class Fiber {
 
     public:
         Fiber(void (*func)(), void * data_par = nullptr){
-            //char data[4096];
             stack_bottom_ = new char[4096];
             stack_top_ = stack_bottom_ + 4096;
             stack_top_ = (char*)((uintptr_t)(stack_bottom_) & -16L);
             stack_top_ = stack_top_ - 128;
+            
             context_.rip = (void*)func;
             context_.rsp = stack_top_;
             data_ = data_par;
@@ -26,7 +26,8 @@ class Fiber {
         
         }
 
-        Context* get_context_() { 
+        Context* get_context() { 
+            // std::cout << "hello 3 - " << &context_ << "\n";
             return &context_;
         }
 

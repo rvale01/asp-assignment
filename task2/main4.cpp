@@ -11,7 +11,9 @@ Scheduler s;
 //     output "fi
 //     call fiber_exit
 void func1(){
-    std::cout << "f1" << std::endl;
+    std::cout << "f1 before" << std::endl;
+    s.yield();
+    std::cout << "f1 after" << std::endl;
     s.fiber_exit();
 }
 

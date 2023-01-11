@@ -20,10 +20,9 @@ int main(){
 
     Fiber f2(goo);
 
-    at_end = f2.get_context_();
+    at_end = f2.get_context();
 
-    //auto context_temp = f1.get_context_();
-    set_context(f1.get_context_());
+    set_context(f1.get_context());
     
     return 0;
 }
