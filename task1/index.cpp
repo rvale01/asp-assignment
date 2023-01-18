@@ -1,7 +1,7 @@
 #include <iostream>
 #include <thread>
 #include <stdlib.h>
-#include "context/context.hpp"
+#include "../context/context.hpp"
 
 // Context which is globally saved, so it can be accessed anywhere in this file
 Context at_end;
