@@ -8,17 +8,15 @@
 Scheduler s;
 
 void func1(){
-    std::cout << "fiber 1" << std::endl;
     auto dp = s.get_current()->get_data();
-    std::cout << "fiber 1:" << *(int*)dp << std::endl;
+    std::cout << "fiber 1: " << *(int*)dp << std::endl;
     *(int*)dp += 1;
     s.fiber_exit();
 }
 
 void func2(){
-    std::cout << "fiber 2" << std::endl;
     auto dp = s.get_current()->get_data();
-    std::cout << "fiber 2:" << *(int*)dp << std::endl;
+    std::cout << "fiber 2: " << *(int*)dp << std::endl;
     s.fiber_exit();
 }
 

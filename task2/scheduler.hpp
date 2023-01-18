@@ -9,7 +9,9 @@ class Scheduler {
         Fiber * current_;
 
     public:
+
     Scheduler(){
+        std::deque<Fiber*> fibers_;
     }
 
     ~Scheduler(){
@@ -31,10 +33,9 @@ class Scheduler {
 
             //set c calling method function get_context from current_
             Context * c = current_->get_context();
-            //call set_context with c
 
-            // std::cout << "hello 3 - " << c << "\n";
-            set_context(current_->get_context());
+            //call set_context with c
+            set_context(c);
         }
     }
 
@@ -47,8 +48,14 @@ class Scheduler {
     }
 
     void yield () {
-        fibers_.push_back(current_);
+        if(!fibers_.empty()){
+            auto old_context = current_->get_context();
+            
+            fibers_.push_back(current_);
+            current_ = fibers_.front();
+            fibers_.pop_front();
 
-        set_context(fibers_.front()->get_context());
+            swap_context(old_context, current_->get_context());
+        }
     }
 };
