@@ -82,3 +82,12 @@ The flow of the code is:
 - func2 is ran and the print statement is shown. Then, since there Fiber f1 is the last one left in the queue, func1 is ran again from the point were it was left (therefore just the second print stament is shown).
 
 An extension of this code is seen in <code>main5.cpp</code> file, where the code is very similar to the one present in <code>main4.cpp</code> , with the exception of passing a data when creating the instance of the Fiber class.
+
+<h3>How to run the code</h3>
+These are the commands to use in order to run any of the files
+<code>clang++ -std=c++11 -o task1 index.cpp ../context.o</code>
+
+<code> task1 </code>
+
+Instead of task1, use the name you want the file to be saved as.
+Instead of index.cpp, use the name of the file you want to run.
