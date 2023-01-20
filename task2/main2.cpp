@@ -37,4 +37,26 @@ int main(){
     return 0;
 }
 
-// TODO: other test cases
+// int main(){
+//     creating an object of type Fiber f1 with func1
+//     Fiber f1(func1);
+    
+//     creating an object of type Fiber f2 with func2 
+//     Fiber f2(func2);
+
+//     Fiber f3(func1);
+//     Fiber f4(func2);
+
+//     call s method spawn with address of f1 (it will add f1 to the queue)
+//     s.spawn(&f1);
+
+//     call s method spawn with address of f2 (it will add f2 to the queue)
+//     s.spawn(&f2);
+
+//     s.spawn(&f3);
+//     s.spawn(&f4);
+
+//     it will start the loop and run all the Fibers in the queue
+//     s.do_it(); 
+//     return 0;
+// }

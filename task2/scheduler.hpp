@@ -24,7 +24,7 @@ class Scheduler {
         fibers_.push_back(f);
     }
 
-    // function which runs the all the values in the 
+    // function which runs the all the values in the queue
     void do_it(){
         // getting the current context
         get_context(&context_);
@@ -48,7 +48,7 @@ class Scheduler {
         set_context(&context_);
     }
 
-    // methos which returns the current context
+    // method which returns the current context
     Fiber * get_current(){
         return current_;
     }
