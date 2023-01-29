@@ -14,7 +14,7 @@ void func1(){
 } 
 
 void func2(){
-    std::cout << "f2" << std::endl;
+    std::cout << "f2 function" << std::endl;
     s.fiber_exit();
 }
 

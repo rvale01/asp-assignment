@@ -14,7 +14,7 @@ void func1(){
     auto dp = s.get_current()->get_data();
 
     // this print will be shown before yield is called
-    std::cout << "f1 before" <<  *(int*)dp << std::endl;
+    std::cout << "f1 before: " <<  *(int*)dp << std::endl;
     s.yield();
 
     // increasing the value of the integer by 1
@@ -22,7 +22,7 @@ void func1(){
 
     // this print will be shown after yield is called, therefore after all the 
     // other Fibers in the queue have been run
-    std::cout << "f1 after" << *(int*)dp << std::endl;
+    std::cout << "f1 after: " << *(int*)dp << std::endl;
     s.fiber_exit();
 }
 

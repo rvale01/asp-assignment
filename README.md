@@ -39,7 +39,7 @@ The class has two getters: one returns a pointer to the context and the other re
 <h4> main.cpp </h4>
 This is very similar to the task 1. It has the same logic, the only difference in on line 26 of the file <code>main.cpp</code>: basically the Fiber class is used and two objecs of type Fiber are created (f1 and f2)
 
-<h4> scheduler.hpp <h4>
+<h4> scheduler.hpp </h4>
 The second part of task 2 includes a Scheduler with the function do_it. The scheduler has three attributes:
 - a queue of pointer of fibers;
 - a context
