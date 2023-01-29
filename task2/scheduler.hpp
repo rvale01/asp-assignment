@@ -18,13 +18,13 @@ class Scheduler {
     ~Scheduler(){
     }
 
-    // function spawn which adds fibers to the queue
+    // function spawn which adds a fiber to the queue
     void spawn(Fiber * f){
         // push f to back of the queue
         fibers_.push_back(f);
     }
 
-    // function which runs the all the values in the queue
+    // function which runs a value in the queue
     void do_it(){
         // getting the current context
         get_context(&context_);
@@ -53,9 +53,10 @@ class Scheduler {
         return current_;
     }
 
+    // THIS IS USED IN TASK 3
     // function which runs the yield:
     // yeilding means stopping the current fiber, pushing it at the back of the queue and,
-    // when it's its turn again, it will resume where it was left off.
+    // when it's its turn again, it will resume from where it was left off.
     void yield () {
         if(!fibers_.empty()){
             // getting the context from the current fiber and saving it
